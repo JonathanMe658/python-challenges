@@ -1,16 +1,29 @@
+NORTH = "North"
+EAST = "East"
+SOUTH = "South"
+WEST = "West"
+
 class Robot:
-    NORTH = "North"
-    EAST = "East"
-    SOUTH = "South"
-    WEST = "West"
 
-
-    def __init__(self, bearing = NORTH, coordinates = (0, 0)):
+    def __init__(self, bearing=NORTH, x=0, y=0):
         self.bearing = bearing
-        self.coordinates = coordinates
+        self.coordinates = (x, y)
+
 
     def advance(self):
-        pass
+        if self.bearing == NORTH:
+            y = self.coordinates[1] + 1
+            self.coordinates = (self.coordinates[0], y)
+        elif self.bearing == EAST:
+            x = self.coordinates[0] + 1
+            self.coordinates = (x, self.coordinates[1])
+        elif self.bearing == SOUTH:
+            y = self.coordinates[1] - 1
+            self.coordinates = (self.coordinates[0], y)
+        elif self.bearing == WEST:
+            x = self.coordinates[0] - 1
+            self.coordinates = (x, self.coordinates[1])
+
 
     def turn_left(self):
         pass
