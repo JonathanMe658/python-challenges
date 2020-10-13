@@ -25,37 +25,37 @@ class Robot:
 
     def turn_left(self):
 				if self.bearing == NORTH:
-						self.bearing == WEST
+						self.bearing = WEST
 						x = self.coordinates[0] - 1
 						self.coordinates = (x, self.coordinates[1])
 				elif self.bearing == WEST:	
-						self.bearing == SOUTH
+						self.bearing = SOUTH
 						y = self.coordinates[1] - 1
 						self.coordinates = (self.coordinates[0], y)
 				elif self.bearing == SOUTH:
-						self.bearing == EAST
+						self.bearing = EAST
 						x = self.coordinates[0] + 1
 						self.coordinates = (x, self.coordinates[1])
 				elif self.bearing == EAST:	                    			
-      			self.bearing == NORTH
+      			self.bearing = NORTH
       			y = self.coordinates[1] - 1
       			self.coordinates = (self.coordinates[0], y)
 
     def turn_right(self):
 				if self.bearing == NORTH:                       			
-        		self.bearing == EAST
+        		self.bearing = EAST
         		x = self.coordinates[0] + 1
         		self.coordinates = (x, self.coordinates[1])
         elif self.bearing == EAST:	
-        		self.bearing == SOUTH
+        		self.bearing = SOUTH
         		y = self.coordinates[1] - 1
         		self.coordinates = (self.coordinates[0], y)
         elif self.bearing == SOUTH:
-        		self.bearing == WEST
+        		self.bearing = WEST
         		x = self.coordinates[0] - 1
         		self.coordinates = (x, self.coordinates[1])
         elif self.bearing == WEST:	                    
-        		self.bearing == NORTH
+        		self.bearing = NORTH
         		y = self.coordinates[1] + 1
 	      		self.coordinates = (self.coordinates[0], y)
 
