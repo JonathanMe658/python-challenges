@@ -12,17 +12,13 @@ class Robot:
 
     def advance(self):
         if self.bearing == NORTH:
-            y = self.coordinates[1] + 1
-            self.coordinates = (self.coordinates[0], y)
+            self.coordinates = (self.coordinates[0], self.coordinates[1] + 1)
         elif self.bearing == EAST:
-            x = self.coordinates[0] + 1
-            self.coordinates = (x, self.coordinates[1])
+            self.coordinates = (self.coordinates[0] + 1, self.coordinates[1])
         elif self.bearing == SOUTH:
-            y = self.coordinates[1] - 1
-            self.coordinates = (self.coordinates[0], y)
+            self.coordinates = (self.coordinates[0], self.coordinates[1] - 1)
         elif self.bearing == WEST:
-            x = self.coordinates[0] - 1
-            self.coordinates = (x, self.coordinates[1])
+            self.coordinates = (self.coordinates[0] - 1, self.coordinates[1])
 
 
     def turn_left(self):
@@ -31,5 +27,11 @@ class Robot:
     def turn_right(self):
         pass
 
-    def simulate(self):
-        pass
+    def simulate(self, seq):
+        for n in seq:
+            if n == "L":
+                self.turn_left()
+            elif n == "R":
+                self.turn_right()
+            elif n == "A":
+                self.advance()
